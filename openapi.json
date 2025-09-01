@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Next.js API Documentation",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/courses/{folderID}/metadata": {
+      "GET": {
+        "summary": "Fetches the name of a Google Drive folder by ID.",
+        "description": "Brief description of what this API endpoint does: Fetches metadata for courses hosted on Google Drive using the provided folder ID. It uses the `getGoogleDriveApiKey` function to authenticate and make an HTTP GET request to fetch only the name field from a specific course's directory in Google Drive.",
+        "parameters": [
+          {
+            "name": "folderID",
+            "type": "string",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/api/folder_details/{folderID}": {
+      "GET": {
+        "summary": "Fetch course folder details including metadata and contents.",
+        "description": "Retrieves the name, modified time of a Google Drive folder specified by Folder ID. Additionally fetches all files within this folder recursively, differentiating between folders (represented as objects with `children` property) and other file types like PDFs or images",
+        "parameters": [
+          {
+            "name": "folderID",
+            "type": "string",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}
