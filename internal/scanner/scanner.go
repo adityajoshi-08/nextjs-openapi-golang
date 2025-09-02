@@ -27,19 +27,16 @@ func (s *Scanner) ScanRoutes() ([]models.APIRoute, error) {
 			return nil
 		}
 
-		// Just check if it's a route file
 		if isRouteFile(d.Name()) {
 			content, err := os.ReadFile(path)
 			if err != nil {
-				return nil // Skip problematic files
+				return nil
 			}
 
-			// Minimal processing - let Ollama figure out the rest
 			route := models.APIRoute{
-				FilePath: path,
+				Path:     path,
 				FileType: strings.TrimPrefix(filepath.Ext(path), "."),
 				Content:  string(content),
-				// Let Ollama determine: Path, Method, Parameters, etc.
 			}
 
 			routes = append(routes, route)
