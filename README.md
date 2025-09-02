@@ -1,4 +1,4 @@
-# Next.js to OpenAPI Generator -- Under Construction and Not Complete
+# Next.js to OpenAPI Generator
 
 A powerful CLI tool written in Go that automatically converts Next.js App Router API routes to OpenAPI 3.0 specifications using AI-powered documentation generation.
 
